@@ -25,7 +25,14 @@
 		target-path = "/";
 
 		__overlay__ {
-			pps_gpio: pps-gpio {
+			pps-gpio@0 {
+				compatible = "pps-gpio";
+				pinctrl-names = "default";
+				gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+				assert-rising-edge;
+				status = "okay";
+			};
+			pps-gpio@1 {
 				compatible = "pps-gpio";
 				pinctrl-names = "default";
 				gpios = <&gpio1 RK_PD4 GPIO_ACTIVE_HIGH>;
